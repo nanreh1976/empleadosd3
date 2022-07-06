@@ -15,5 +15,8 @@ export class EmpleadoHijoCComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  arrayCaract = [''] ;
+  agregarCarat(newCarac:string){
+    this.arrayCaract.push(newCarac);
+  }
 }

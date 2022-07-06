@@ -7,6 +7,11 @@
 
 
           </div>
-        </div>  
+          
+          <ul style="list-style: none;">
+            <li *ngFor="let caract of arrayCaract">{{caract}}</li>
+        </ul>
+        </div>
+        <app-caract-empleado-c (caractEmpl)="agregarCarat($event)">   </app-caract-empleado-c>  
     </div>
 
