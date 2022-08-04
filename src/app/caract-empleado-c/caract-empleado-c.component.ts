@@ -10,13 +10,13 @@ export class CaractEmpleadoCComponent implements OnInit {
 
   @Output() caractEmpl = new EventEmitter<string>();
 
-  constructor(private miServicio:ServicioEmpleadosService) { }
+ // constructor(private miServicio:ServicioEmpleadosService) { }
 
   ngOnInit(): void {
   }
 
   agregaCaract(value:string) {
-    this.miServicio.muestraMensaje(value)
-    this.caractEmpl.emit(value);
+   // this.miServicio.muestraMensaje(value)
+   // this.caractEmpl.emit(value);
   }
 }
