@@ -2,10 +2,11 @@
 <div class="container">
     <div class="row">
         <div class="col" >
-           
-           {{ind+1}}: {{emplist.nombre}} {{emplist.apellido}} {{emplist.cargo}} {{emplist.salario}}
-
-
+          <div> 
+            <a [routerLink]="['/actualiza',ind]">
+            {{ind+1}}: {{emplist.nombre}} {{emplist.apellido}} {{emplist.cargo}} {{emplist.salario}}
+            </a>
+            </div> 
           </div>
           
           <ul style="list-style: none;">
