@@ -55,4 +55,12 @@ actualizarEmpleado(indice:number, empleado:Empleado){
 
 }
 
+eliminarEmpleado(indice:number){
+
+    this.empleados.splice(indice,1);
+
+    
+
+}
+
 }

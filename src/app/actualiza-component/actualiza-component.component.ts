@@ -44,7 +44,15 @@ export class ActualizaComponentComponent implements OnInit {
       this.router.navigate(['']);
       
       }
-      
+      eliminaEmpleado(){
+        //let miEmpleado=new Empleado(this.cuadroNombre,this.cuadroApellido,this.cuadroCargo,this.cuadroSalario);
+        // this.miServicio.muestraMensaje("Nombre del Empleado: "+ miEmpleado.nombre);
+        this.empleadoService.eliminarEmpleado(this.indice,);
+        
+        this.router.navigate(['']);
+        
+        }
+        
       
       
       cuadroNombre:string="";
