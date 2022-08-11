@@ -15,9 +15,11 @@ export class ActualizaComponentComponent implements OnInit {
   constructor(private router:Router,private route:ActivatedRoute, private miServicio:ServicioEmpleadosService, private empleadoService:EmpleadosService) { }
 
   empleados:Empleado[]=[];
+  accion:number;
 
   ngOnInit(): void {
 
+    this.accion=parseInt(this.route.snapshot.queryParams['accion']);
     this.empleados=this.empleadoService.empleados;
     
     this.indice=this.route.snapshot.params['id'];
@@ -36,7 +38,7 @@ export class ActualizaComponentComponent implements OnInit {
     
     }
     
-    actualizaEmpleado(){
+    /*actualizaEmpleado(){
       let miEmpleado=new Empleado(this.cuadroNombre,this.cuadroApellido,this.cuadroCargo,this.cuadroSalario);
       // this.miServicio.muestraMensaje("Nombre del Empleado: "+ miEmpleado.nombre);
       this.empleadoService.actualizarEmpleado(this.indice,miEmpleado);
@@ -52,8 +54,25 @@ export class ActualizaComponentComponent implements OnInit {
         this.router.navigate(['']);
         
         }
+       */ 
+        actualizaEmpleado(){
+          
+          if(this.accion==1){
+          
+          let miEmpleado=new Empleado(this.cuadroNombre,this.cuadroApellido,this.cuadroCargo,this.cuadroSalario);
+         
+          this.empleadoService.actualizarEmpleado(this.indice,miEmpleado);
+          
+          this.router.navigate(['']);
         
-      
+        }else{
+          
+          this.empleadoService.eliminarEmpleado(this.indice,);
+        
+        
+        this.router.navigate(['']);
+        }
+      }
       
       cuadroNombre:string="";
       cuadroApellido:string="";
