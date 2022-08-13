@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { Dataservices } from "./data.services";
 import { Empleado } from "./empleado.model";
 import { ServicioEmpleadosService } from "./servicio-empleados.service";
 
@@ -9,7 +10,7 @@ export class EmpleadosService {
   }
 
 
-    constructor(private servicioVentanaEmergente: ServicioEmpleadosService){
+    constructor(private servicioVentanaEmergente: ServicioEmpleadosService, private dataService:Dataservices){
 
 
 
@@ -34,6 +35,8 @@ agregarEmpleadoServicio(empleado:Empleado){
  
  
     this.empleados.push(empleado);
+
+    this.dataService.guardarEmpleados(this.empleados);
 }
 
 
