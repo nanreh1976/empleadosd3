@@ -17,6 +17,13 @@ export class EmpleadosService {
 
     }
 
+    setEmpleados(misEmpleados:Empleado[]){
+
+        this.empleados=misEmpleados;
+
+    }
+    
+    
     obternerEmpleados(){
 
 

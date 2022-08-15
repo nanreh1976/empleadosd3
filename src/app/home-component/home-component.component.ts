@@ -23,7 +23,11 @@ export class HomeComponentComponent implements OnInit {
     this.empleadoService.obternerEmpleados().subscribe(misEmpleados=>{
 
       console.log(misEmpleados);
-      
+
+      this.empleados=Object.values(misEmpleados);
+
+      this.empleadoService.setEmpleados(this.empleados);
+
     }); 
 
   }
