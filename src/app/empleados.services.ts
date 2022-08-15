@@ -17,7 +17,15 @@ export class EmpleadosService {
 
     }
 
-    empleados:Empleado[]=[
+    obternerEmpleados(){
+
+
+    return this.dataService.cargarEmpleados();
+
+    }
+        empleados:Empleado[]=[]; // creo este array vacio para tomar los datos de la BD y no uso el array de abajo de este que estaba cargado
+
+    /*empleados:Empleado[]=[
 
         new Empleado("juan","Díaz","Presidente",7500),
         new Empleado("Ana","Martín","Directora",5500),
@@ -27,7 +35,7 @@ export class EmpleadosService {
         
         ];
         
-
+*/
 agregarEmpleadoServicio(empleado:Empleado){
  
     this.servicioVentanaEmergente.muestraMensaje("Persona que se va a agregar :" + "\n" +

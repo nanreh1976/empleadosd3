@@ -16,7 +16,16 @@ export class HomeComponentComponent implements OnInit {
 // comento el constructor this empleados para usar el metodo Oninit 
 
   ngOnInit(): void {
-    this.empleados=this.empleadoService.empleados;
+   
+   
+   // this.empleados=this.empleadoService.empleados;    //comento esta linea porque no quiero que traiga los datos del array de empleado.services
+
+    this.empleadoService.obternerEmpleados().subscribe(misEmpleados=>{
+
+      console.log(misEmpleados);
+      
+    }); 
+
   }
   empleados:Empleado[]=[]; // se agrega un array vacio para poder inyectar datos al array
 

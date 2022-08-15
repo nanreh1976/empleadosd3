@@ -8,9 +8,23 @@ export class Dataservices{
 
     constructor(private HttpClient:HttpClient){}
 
+    cargarEmpleados(){
+
+
+        return this.HttpClient.get('https://mis-clientespi-default-rtdb.firebaseio.com/datos.json');
+
+
+
+
+
+    }
+
+
+
+
     guardarEmpleados(empleados:Empleado[]){
         
-        this.HttpClient.post('https://mis-clientespi-default-rtdb.firebaseio.com/datos.json',empleados).subscribe(
+        this.HttpClient.put('https://mis-clientespi-default-rtdb.firebaseio.com/datos.json',empleados).subscribe(
 
         Response=>console.log("se han guardado el empleado" + Response),
         
