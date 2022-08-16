@@ -39,7 +39,20 @@ export class Dataservices{
 
     }
 
+    actualizarEmpleado(indice:number,empleado:Empleado){
 
+        let url='https://mis-clientespi-default-rtdb.firebaseio.com/datos/'+ indice + '.json';
+
+        this.HttpClient.put(url,empleado).subscribe(
+
+        Response=>console.log("se ha modificado el empleado: " + Response),
+        
+        error=> console.log("Error:" + error),
+        
+
+        );
+
+    }
 
 
 }

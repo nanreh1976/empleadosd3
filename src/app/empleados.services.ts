@@ -71,6 +71,8 @@ actualizarEmpleado(indice:number, empleado:Empleado){
     empleadoModificado.cargo=empleado.cargo;
     empleadoModificado.salario=empleado.salario;
 
+    this.dataService.actualizarEmpleado(indice,empleado);
+
 }
 
 eliminarEmpleado(indice:number){
