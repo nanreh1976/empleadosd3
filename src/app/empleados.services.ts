@@ -79,7 +79,9 @@ eliminarEmpleado(indice:number){
 
     this.empleados.splice(indice,1);
 
+    this.dataService.eliminarEmpleado(indice); //borra el registro especifico
     
+    if(this.empleados!=null)this.dataService.guardarEmpleados(this.empleados); //si se borra un registro intermedio, no muestra los siguientes, asi con esto se reama el array
 
 }
 
