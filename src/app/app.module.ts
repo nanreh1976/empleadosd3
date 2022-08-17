@@ -17,6 +17,7 @@ import { ErrorPersonalizadoComponent } from './error-personalizado/error-persona
 import { Dataservices } from './data.services';
 
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
 
 const appRoutes:Routes=[
 
@@ -25,6 +26,7 @@ const appRoutes:Routes=[
 {path:'quienes', component:QuienesComponentsComponent },
 {path:'contacto', component:ContactoComponentComponent },
 {path:'actualiza/:id', component:ActualizaComponentComponent },
+{path:'login', component:LoginComponent },
 {path:'**', component:ErrorPersonalizadoComponent }
 
 ];
@@ -40,7 +42,8 @@ const appRoutes:Routes=[
     ContactoComponentComponent,
     HomeComponentComponent,
     ActualizaComponentComponent,
-    ErrorPersonalizadoComponent
+    ErrorPersonalizadoComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
