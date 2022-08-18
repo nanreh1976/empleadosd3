@@ -3,30 +3,30 @@ import { Route, Router } from "@angular/router";
 
 import firebase from 'firebase/compat/app';  //importamos firebase porque la necesitamos usar en el login
 
-import 'firebase/compat/auth'  //hay que importar firebase auth0
+import 'firebase/compat/auth'  //hay que importar firebase auth0 para validar
 
 
 @Injectable()
 
  export class LoginService{
 
-    constructor(private router:Router){}
+    constructor(private router:Router){}  // para direccionar a una pagina importa el router
 
-    token:string; // firma o codigo de seguridad encabezamiento, la informacion y la firma
+    token:string; // firma o codigo de seguridad encabezamiento, la informacion y la firma, pero dice que token es var tipo string
 
-    login(email:string, password:string){
+    login(email:string, password:string){  //crea el metodo para tomar los datos
 
-        firebase.auth().signInWithEmailAndPassword(email, password).then(
+        firebase.auth().signInWithEmailAndPassword(email, password).then(  //inicia firace y hace signIn con los datos email y pass
 
             Response=>{
 
-                firebase.auth().currentUser?.getIdToken().then(
+                firebase.auth().currentUser?.getIdToken().then(     //autentifica con firebase.auth el usuario y con su token
 
                     token=>{
 
 
-                        this.token=token;
-                        this.router.navigate(['/']);
+                        this.token=token;                   //guarda los datos del token en la variable token
+                        this.router.navigate(['/']);        //ya validado te manda al home
                         }
             )
         }
@@ -38,7 +38,7 @@ import 'firebase/compat/auth'  //hay que importar firebase auth0
 
     getIdToken() {
 
-        return this.token;
+        return this.token;   //devuelve el token 
       } 
 
  }
