@@ -18,6 +18,7 @@ import { Dataservices } from './data.services';
 
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import { LoginService } from './login/login.service';
 
 const appRoutes:Routes=[
 
@@ -51,7 +52,7 @@ const appRoutes:Routes=[
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
   ],
-  providers: [ServicioEmpleadosService, EmpleadosService, Dataservices],
+  providers: [ServicioEmpleadosService, EmpleadosService, Dataservices, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

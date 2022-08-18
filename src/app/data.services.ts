@@ -1,17 +1,19 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Empleado } from "./empleado.model";
+import { LoginService } from "./login/login.service";
 
 
 @Injectable()
 export class Dataservices{
 
-    constructor(private HttpClient:HttpClient){}
+    constructor(private HttpClient:HttpClient, private loginService:LoginService){}
 
     cargarEmpleados(){
 
 
-        return this.HttpClient.get('https://mis-clientespi-default-rtdb.firebaseio.com/datos.json');
+        const token=this.loginService.getIdToken();
+        return this.HttpClient.get('https://mis-clientespi-default-rtdb.firebaseio.com/datos.json?auth=' + token);
 
 
 
